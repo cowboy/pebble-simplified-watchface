@@ -1,2 +1,1 @@
-# pebble-simplified-watchface
-Simplified Watchface for Pebble
+# Simplified Watchface for Pebble
