@@ -1,0 +1,56 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "\"Cowboy\" Ben Alman",
+    "longName": "Simplified Watchface",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/mplus-2m-regular-sub.ttf",
+                "name": "FONT_MPLUS_BOLD_18",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/mplus-2m-regular-sub.ttf",
+                "name": "FONT_MPLUS_BOLD_40",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/mplus-2m-regular-sub.ttf",
+                "name": "FONT_MPLUS_BOLD_64",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[A-Z]",
+                "file": "fonts/mplus-2m-light-sub.ttf",
+                "name": "FONT_MPLUS_LIGHT_18",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[A-Z]",
+                "file": "fonts/mplus-2m-light-sub.ttf",
+                "name": "FONT_MPLUS_LIGHT_40",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[A-Z]",
+                "file": "fonts/mplus-2m-light-sub.ttf",
+                "name": "FONT_MPLUS_LIGHT_64",
+                "type": "font"
+            }
+        ]
+    },
+    "shortName": "Simplified",
+    "uuid": "43adbe2b-5ad2-4505-8a7a-acea468926d1",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
