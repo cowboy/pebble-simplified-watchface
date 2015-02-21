@@ -43,8 +43,11 @@
             }
         ]
     },
-    "appKeys": {},
+    "appKeys": {
+      "LIGHT_BACKGROUND_KEY": 0,
+      "TWO_DIGIT_DATE_KEY": 1
+    },
     "capabilities": [
-        ""
+        "configurable"
     ]
 }

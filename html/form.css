@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'M+ 2m regular';
+  src: url('fonts/mplus-2m-regular-sub.eot');
+  src: url('fonts/mplus-2m-regular-sub.eot?#iefix') format('embedded-opentype'),
+  url('fonts/mplus-2m-regular-sub.woff') format('woff'),
+  url('fonts/mplus-2m-regular-sub.ttf') format('truetype');
+}
+
+body {
+  font-family: 'M+ 2m regular';
+  color: #fff;
+  background: #000;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.submit {
+  margin-top: 3em;
+}

@@ -24,6 +24,7 @@ static TextLayer *s_day_single;
 static TextLayer *s_date;
 static TextLayer *s_date_single;
 static TextLayer *s_time;
+static InverterLayer *s_invert;
 
 static void initialise_ui(void) {
   s_window = window_create();
@@ -152,6 +153,10 @@ static void initialise_ui(void) {
   text_layer_set_text(s_time, "8888");
   text_layer_set_font(s_time, s_res_font_mplus_bold_64);
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_time);
+  
+  // s_invert
+  s_invert = inverter_layer_create(GRect(0, 0, 144, 168));
+  layer_add_child(window_get_root_layer(s_window), (Layer *)s_invert);
 }
 
 static void destroy_ui(void) {
@@ -171,6 +176,7 @@ static void destroy_ui(void) {
   text_layer_destroy(s_date);
   text_layer_destroy(s_date_single);
   text_layer_destroy(s_time);
+  inverter_layer_destroy(s_invert);
   fonts_unload_custom_font(s_res_font_mplus_light_18);
   fonts_unload_custom_font(s_res_font_mplus_bold_64);
   fonts_unload_custom_font(s_res_font_mplus_light_40);
@@ -193,6 +199,10 @@ void show_face(void) {
 void hide_face(void) {
   window_stack_remove(s_window, true);
 }
+
+
+// BEGIN COWBOY-GENERATED-CODE
+
 
 // From the interwebs
 char *upcase(char *str) {
@@ -219,12 +229,28 @@ void init_text_item(struct TextItem texts[], int index, int length, int move, Te
   texts[index].layer = layer;
 }
 
+// These constants are defined in appinfo.json, face.c, pebble-js-app.js
+#define LIGHT_BACKGROUND_KEY 0
+#define TWO_DIGIT_DATE_KEY   1
+
+// Get int value from persistent storage or the default value of 0.
+int get_persist_int(int key) {
+  if (persist_exists(key)) {
+    return persist_read_int(key);
+  } else {
+    return 0;
+  }
+}
+
 // Magic
-void update_time(void) {
-  time_t temp = time(NULL);
-  struct tm *tick_time = localtime(&temp);
+void update_face(void) {
+  bool show_light_background = get_persist_int(LIGHT_BACKGROUND_KEY) == 1;
+  bool show_two_digit_date = get_persist_int(TWO_DIGIT_DATE_KEY) == 1;
 
   bool is_clock_24h = clock_is_24h_style();
+
+  time_t temp = time(NULL);
+  struct tm *tick_time = localtime(&temp);
 
   // Format one long time string, then split it up as-needed.
   char format_string[20] = "%Y%b%d%a%p";
@@ -233,10 +259,11 @@ void update_time(void) {
   } else {
     strcat(format_string, "%I%M");
   }
+  // "2015FEB20FRIAM0905"
   static char formatted_time[20];
   strftime(formatted_time, sizeof(formatted_time), format_string, tick_time);
   upcase(formatted_time);
-  //APP_LOG(APP_LOG_LEVEL_DEBUG, "formatted_time <%s>", formatted_time);
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "formatted_time <%s>", formatted_time);
 
   // Initialize all text items whose text will be parsed from
   // the formatted time string.
@@ -283,7 +310,7 @@ void update_time(void) {
 
   // Hide/show certain layers based on whether the date is
   // single- or double-digit.
-  bool is_single_digit_date = texts[DATE].text[0] == '0';
+  bool is_single_digit_date = !show_two_digit_date && texts[DATE].text[0] == '0';
 
   layer_set_hidden((Layer *)s_day, is_single_digit_date);
   layer_set_hidden((Layer *)s_date, is_single_digit_date);
@@ -291,6 +318,10 @@ void update_time(void) {
   layer_set_hidden((Layer *)s_day_line_2, is_single_digit_date);
   layer_set_hidden((Layer *)s_day_single, !is_single_digit_date);
   layer_set_hidden((Layer *)s_date_single, !is_single_digit_date);
+
+  // Hide/show AM/PM if the clock mode is 24h.
+  layer_set_hidden((Layer *)s_ampm_1, is_clock_24h);
+  layer_set_hidden((Layer *)s_ampm_2, is_clock_24h);
 
   // Compute and display numeric date superscript suffix.
   char d1 = texts[DATE].text[0];
@@ -313,4 +344,7 @@ void update_time(void) {
   }
   text_layer_set_text(s_date_1, date1);
   text_layer_set_text(s_date_2, date2);
+
+  // Hide inversion layer if show_light_background isn't set.
+  layer_set_hidden((Layer *)s_invert, !show_light_background);
 }

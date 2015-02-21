@@ -1,0 +1,10 @@
+{
+  "name": "bower shouldn't care about this property, wtf",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}

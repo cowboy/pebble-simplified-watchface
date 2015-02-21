@@ -1,0 +1,7 @@
+# Ignore build generated files
+/build
+.lock-waf_darwin_build
+.waf*
+
+# Ignore bower files
+/html/bower_components
