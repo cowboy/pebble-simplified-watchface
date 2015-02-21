@@ -36,7 +36,7 @@ static void initialise_ui(void) {
   s_res_font_mplus_light_40 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_MPLUS_LIGHT_40));
   s_res_font_mplus_light_64 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_MPLUS_LIGHT_64));
   // s_month_3
-  s_month_3 = text_layer_create(GRect(128, 147, 16, 30));
+  s_month_3 = text_layer_create(GRect(128, 145, 16, 30));
   text_layer_set_background_color(s_month_3, GColorClear);
   text_layer_set_text_color(s_month_3, GColorWhite);
   text_layer_set_text(s_month_3, "X");
@@ -45,7 +45,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_month_3);
   
   // s_month_2
-  s_month_2 = text_layer_create(GRect(128, 131, 16, 30));
+  s_month_2 = text_layer_create(GRect(128, 129, 16, 30));
   text_layer_set_background_color(s_month_2, GColorClear);
   text_layer_set_text_color(s_month_2, GColorWhite);
   text_layer_set_text(s_month_2, "X");
@@ -54,7 +54,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_month_2);
   
   // s_month_1
-  s_month_1 = text_layer_create(GRect(128, 115, 16, 30));
+  s_month_1 = text_layer_create(GRect(128, 113, 16, 30));
   text_layer_set_background_color(s_month_1, GColorClear);
   text_layer_set_text_color(s_month_1, GColorWhite);
   text_layer_set_text(s_month_1, "X");
@@ -81,7 +81,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_date_1);
   
   // s_ampm_2
-  s_ampm_2 = text_layer_create(GRect(128, 33, 16, 30));
+  s_ampm_2 = text_layer_create(GRect(128, 34, 16, 30));
   text_layer_set_background_color(s_ampm_2, GColorClear);
   text_layer_set_text_color(s_ampm_2, GColorWhite);
   text_layer_set_text(s_ampm_2, "X");
@@ -90,7 +90,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_ampm_2);
   
   // s_ampm_1
-  s_ampm_1 = text_layer_create(GRect(128, 17, 16, 30));
+  s_ampm_1 = text_layer_create(GRect(128, 18, 16, 30));
   text_layer_set_background_color(s_ampm_1, GColorClear);
   text_layer_set_text_color(s_ampm_1, GColorWhite);
   text_layer_set_text(s_ampm_1, "X");
@@ -99,7 +99,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_ampm_1);
   
   // s_year
-  s_year = text_layer_create(GRect(2, 102, 170, 77));
+  s_year = text_layer_create(GRect(2, 100, 170, 77));
   text_layer_set_background_color(s_year, GColorClear);
   text_layer_set_text_color(s_year, GColorWhite);
   text_layer_set_text(s_year, "8888");
@@ -147,7 +147,7 @@ static void initialise_ui(void) {
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_date_single);
   
   // s_time
-  s_time = text_layer_create(GRect(2, -14, 170, 77));
+  s_time = text_layer_create(GRect(2, -12, 170, 77));
   text_layer_set_background_color(s_time, GColorClear);
   text_layer_set_text_color(s_time, GColorWhite);
   text_layer_set_text(s_time, "8888");
