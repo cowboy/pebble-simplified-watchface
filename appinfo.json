@@ -1,8 +1,8 @@
 {
     "uuid": "43adbe2b-5ad2-4505-8a7a-acea468926d1",
     "shortName": "Simplified",
-    "longName": "Simplified Watchface",
-    "companyName": "'Cowboy' Ben Alman",
+    "longName": "Simplified",
+    "companyName": "“Cowboy” Ben Alman",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {
@@ -34,6 +34,12 @@
                 "file": "fonts/mplus-2m-light-sub.ttf",
                 "name": "FONT_MPLUS_LIGHT_64",
                 "type": "font"
+            },
+            {
+                "menuIcon": true,
+                "type": "png",
+                "name": "IMAGE_MENU_ICON",
+                "file": "images/menu_icon_simplified.png"
             }
         ]
     },
