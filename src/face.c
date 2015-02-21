@@ -250,6 +250,32 @@ void update_face(void) {
   bool is_clock_24h = clock_is_24h_style();
 
   time_t temp = time(NULL);
+
+  // For taking screenshots.
+  // pebble clean && pebble build && pebble install && pebble screenshot
+  switch (0) {
+    case 1:
+      // 1248PM THU29TH 2015JAN
+      temp = 1422535680;
+      is_clock_24h = false;
+      show_light_background = false;
+      break;
+    case 2:
+      // 0706AM TUE3RD  2015FEB
+      temp = 1422947160;
+      is_clock_24h = false;
+      show_two_digit_date = false;
+      show_light_background = false;
+      break;
+    case 3:
+      // 2349   SUN01ST 2015MAR
+      temp = 1425253740;
+      is_clock_24h = true;
+      show_two_digit_date = true;
+      show_light_background = true;
+      break;
+  }
+
   struct tm *tick_time = localtime(&temp);
 
   // Format one long time string, then split it up as-needed.
