@@ -1,53 +1,58 @@
 {
-    "uuid": "43adbe2b-5ad2-4505-8a7a-acea468926d1",
-    "shortName": "Simplified",
-    "longName": "Simplified",
-    "companyName": "“Cowboy” Ben Alman",
-    "versionCode": 1,
-    "versionLabel": "1.0",
-    "watchapp": {
-        "watchface": true
-    },
-    "projectType": "native",
-    "resources": {
-        "media": [
-            {
-                "characterRegex": "[0-9]",
-                "file": "fonts/mplus-2m-regular-sub.ttf",
-                "name": "FONT_MPLUS_BOLD_64",
-                "type": "font"
-            },
-            {
-                "characterRegex": "[A-Z]",
-                "file": "fonts/mplus-2m-light-sub.ttf",
-                "name": "FONT_MPLUS_LIGHT_18",
-                "type": "font"
-            },
-            {
-                "characterRegex": "[A-Z]",
-                "file": "fonts/mplus-2m-light-sub.ttf",
-                "name": "FONT_MPLUS_LIGHT_40",
-                "type": "font"
-            },
-            {
-                "characterRegex": "[A-Z]",
-                "file": "fonts/mplus-2m-light-sub.ttf",
-                "name": "FONT_MPLUS_LIGHT_64",
-                "type": "font"
-            },
-            {
-                "menuIcon": true,
-                "type": "png",
-                "name": "IMAGE_MENU_ICON",
-                "file": "images/menu_icon_simplified.png"
-            }
-        ]
-    },
-    "appKeys": {
-      "LIGHT_BACKGROUND_KEY": 0,
-      "TWO_DIGIT_DATE_KEY": 1
-    },
-    "capabilities": [
-        "configurable"
+  "uuid": "43adbe2b-5ad2-4505-8a7a-acea468926d1",
+  "shortName": "Simplified",
+  "longName": "Simplified",
+  "companyName": "\u201cCowboy\u201d Ben Alman",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "projectType": "native",
+  "resources": {
+    "media": [
+      {
+        "characterRegex": "[0-9]",
+        "file": "fonts/mplus-2m-regular-sub.ttf",
+        "name": "FONT_MPLUS_BOLD_64",
+        "type": "font"
+      },
+      {
+        "characterRegex": "[A-Z]",
+        "file": "fonts/mplus-2m-light-sub.ttf",
+        "name": "FONT_MPLUS_LIGHT_18",
+        "type": "font"
+      },
+      {
+        "characterRegex": "[A-Z]",
+        "file": "fonts/mplus-2m-light-sub.ttf",
+        "name": "FONT_MPLUS_LIGHT_40",
+        "type": "font"
+      },
+      {
+        "characterRegex": "[A-Z]",
+        "file": "fonts/mplus-2m-light-sub.ttf",
+        "name": "FONT_MPLUS_LIGHT_64",
+        "type": "font"
+      },
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_MENU_ICON",
+        "file": "images/menu_icon_simplified.png"
+      }
     ]
+  },
+  "appKeys": {
+    "LIGHT_BACKGROUND_KEY": 0,
+    "TWO_DIGIT_DATE_KEY": 1
+  },
+  "capabilities": [
+    "configurable"
+  ],
+  "targetPlatforms": [
+    "aplite",
+    "basalt"
+  ],
+  "sdkVersion": "3"
 }
